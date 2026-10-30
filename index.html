@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DreamGate — Indie Apps & Source Codes</title>
+<meta name="description" content="DreamGate builds polished indie apps for Android. Browse our apps and buy full source codes.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #1e293b; background: #fff7ed; line-height: 1.5; }
+  a { text-decoration: none; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  header { background: #ffffff; border-bottom: 3px solid #fde68a; position: sticky; top: 0; z-index: 10; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 26px; color: #7c3aed; letter-spacing: -0.5px; }
+  .logo-badge { width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg,#7c3aed,#ec4899); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; box-shadow: 0 6px 0 #4c1d95; }
+  .nav-links { display: flex; gap: 18px; font-weight: 700; }
+  .nav-links a { color: #334155; }
+  .nav-links a:hover { color: #7c3aed; }
+  .hero { text-align: center; padding: 56px 0 36px; }
+  .hero h1 { font-size: 46px; line-height: 1.1; letter-spacing: -1px; color: #0f172a; }
+  .hero h1 span { color: #7c3aed; }
+  .hero p { font-size: 19px; color: #475569; max-width: 640px; margin: 16px auto 0; }
+  .hero-btns { display: flex; gap: 14px; justify-content: center; margin-top: 26px; flex-wrap: wrap; }
+  .btn { display: inline-block; font-weight: 800; font-size: 17px; padding: 14px 26px; border-radius: 999px; border: none; cursor: pointer; box-shadow: 0 5px 0 rgba(0,0,0,0.18); transition: transform 0.08s ease, box-shadow 0.08s ease; }
+  .btn:active { transform: translateY(4px); box-shadow: 0 1px 0 rgba(0,0,0,0.18); }
+  .btn-primary { background: #7c3aed; color: #fff; }
+  .btn-dark { background: #0f172a; color: #fff; }
+  .btn-light { background: #ffffff; color: #0f172a; box-shadow: 0 5px 0 #cbd5e1; }
+  h2 { font-size: 32px; letter-spacing: -0.5px; color: #0f172a; text-align: center; margin-bottom: 8px; }
+  .section-sub { text-align: center; color: #475569; font-size: 17px; margin-bottom: 30px; }
+  .section { padding: 40px 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+  .card { background: #fff; border-radius: 24px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 2px solid #f1f5f9; display: flex; flex-direction: column; gap: 12px; }
+  .card-icon { width: 72px; height: 72px; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 38px; color: #fff; box-shadow: 0 6px 0 rgba(0,0,0,0.15); }
+  .card h3 { font-size: 22px; line-height: 1.2; color: #0f172a; }
+  .badge { display: inline-block; font-size: 13px; font-weight: 800; padding: 5px 12px; border-radius: 999px; }
+  .badge-live { background: #dcfce7; color: #166534; }
+  .badge-testing { background: #fef3c7; color: #92400e; }
+  .card p { color: #475569; font-size: 15.5px; }
+  .features { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .features li { background: #f1f5f9; border-radius: 999px; padding: 5px 12px; font-size: 13.5px; font-weight: 600; color: #334155; }
+  .card-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+  .card-btns .btn { font-size: 15px; padding: 11px 20px; }
+  .privacy-link { font-size: 13.5px; font-weight: 600; color: #64748b; }
+  .source-box { background: #ffffff; border-radius: 24px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 2px solid #ede9fe; }
+  .source-box h3 { font-size: 22px; margin-bottom: 10px; }
+  .source-box p { color: #475569; margin-bottom: 12px; }
+  .source-list { list-style: none; display: grid; gap: 12px; margin-top: 18px; }
+  .source-list li { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; background: #f5f3ff; border-radius: 16px; padding: 14px 18px; }
+  .source-list .s-name { font-weight: 800; color: #0f172a; }
+  .source-list .s-note { font-size: 13.5px; color: #475569; }
+  footer { background: #0f172a; color: #cbd5e1; padding: 32px 0; margin-top: 20px; text-align: center; }
+  footer a { color: #fff; font-weight: 700; }
+  footer p { margin-bottom: 8px; }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 34px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="logo"><div class="logo-badge">D</div>DreamGate</div>
+    <nav class="nav-links">
+      <a href="#apps">Apps</a>
+      <a href="#source-codes">Source Codes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Apps that make you<br>want to give <span>5 stars.</span></h1>
+    <p id="hero-tagline">Indie apps, built with care.</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#apps">See our apps</a>
+      <a class="btn btn-dark" href="#source-codes">Buy a source code</a>
+    </div>
+  </section>
+
+  <section class="section" id="apps">
+    <h2>Our Apps</h2>
+    <p class="section-sub">Polished, fun, and made for real players and learners.</p>
+    <div class="grid" id="apps-grid"></div>
+  </section>
+
+  <section class="section" id="source-codes">
+    <h2>Source Codes for Sale</h2>
+    <p class="section-sub">Own the full project behind any DreamGate app and launch your own version.</p>
+    <div class="source-box">
+      <h3>What you get</h3>
+      <p>The complete Android project — code, assets, and build setup — ready to open and build. Signing keys are <strong>not</strong> included: you sign with your own key, which keeps every app secure.</p>
+      <p>To buy, email us with the app name. We will confirm the price and send you a secure download link after payment.</p>
+      <ul class="source-list" id="source-list"></ul>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <p><strong style="color:#fff;">DreamGate</strong> — indie app studio</p>
+  <p>Contact: <a id="contact-email" href="#">email</a></p>
+  <p style="font-size:13px; color:#94a3b8;">Apps are published on Google Play. Source codes are sold as complete projects; buyers sign with their own keys.</p>
+</footer>
+
+<script>
+var DATA = {"apps": [{"description": "1,150+ original MCQs with English and Roman Urdu explanations, timed mock tests, daily challenge and streaks. 100% offline, no account needed.", "features": ["1,150+ original questions", "EN + Roman Urdu explanations", "Daily challenge & streaks", "100% offline"], "gradient": "linear-gradient(135deg,#8b5cf6,#ec4899)", "icon": "\ud83e\udde0", "id": "rozquiz", "name": "RozQuiz: Daily MCQ Practice", "package": "com.dreamgateltd.paktestprep", "privacyUrl": "https://sites.google.com/view/pak-test-prep-privacy-policy", "sourceCode": {"forSale": true, "note": "Complete Android project. Signing keys not included \u2014 buyer signs with their own key.", "price": null}, "status": "live", "statusLabel": "Live on Google Play", "storeUrl": "https://play.google.com/store/apps/details?id=com.dreamgateltd.paktestprep", "tagline": "Rozana MCQ practice \u2014 har subject, har din."}, {"description": "1,944 questions covering official citizenship-test tiers for the US, UK, Canada, Australia, Germany, France and the Netherlands, plus general civic quizzes for 190 more countries.", "features": ["197 countries", "1,944 questions", "Official test tiers for 7 countries", "General quizzes for 190 more"], "gradient": "linear-gradient(135deg,#0ea5e9,#22c55e)", "icon": "\ud83c\udf0d", "id": "gct", "name": "Global Citizenship Test", "package": "com.yasir.globalcitizenshiptest", "privacyUrl": "https://muse.ai/s/privacy-policy-global-citizenship-test-wj6wxqwmbxisq/4U3geKojbdu4Uum1CrOhjHhX2eeyOpmH4BgqTOqaPpk", "sourceCode": {"forSale": true, "note": "Complete Android project. Signing keys not included \u2014 buyer signs with their own key.", "price": null}, "status": "testing", "statusLabel": "In closed testing", "storeUrl": "https://play.google.com/store/apps/details?id=com.yasir.globalcitizenshiptest", "tagline": "Citizenship test practice for 197 countries."}, {"description": "A cheerful Kids Zone puzzle game with 17 HD cartoon animals, built for young players with big tactile pieces and friendly feedback.", "features": ["17 HD cartoon animals", "Kids Zone", "Big tactile pieces", "Friendly for young players"], "gradient": "linear-gradient(135deg,#f59e0b,#ef4444)", "icon": "\ud83e\udd81", "id": "puzelo", "name": "Puzelo Kids Animal Puzzle", "package": "com.dreamgateltd.puzelo", "privacyUrl": "https://muse.ai/s/puzelo-privacy-policy-rxl6xzxihgfxjpb/9xKlun-LP4MdyJ-pnSXlZaM9M4EmXWGRDzkZ_F-xoaM", "sourceCode": {"forSale": true, "note": "Complete Android project. Signing keys not included \u2014 buyer signs with their own key.", "price": null}, "status": "testing", "statusLabel": "In closed testing", "storeUrl": "https://play.google.com/store/apps/details?id=com.dreamgateltd.puzelo", "tagline": "Kids animal puzzles \u2014 17 HD cartoon animals."}, {"description": "An advanced tap-puzzle: tap an arrow with a clear path to the edge, but a wrong tap costs a heart. Special arrows, a level map with stars, and seeded tiers up to MYTHIC.", "features": ["Special arrows", "Level map with stars", "Tiers up to MYTHIC", "Heart-based challenge"], "gradient": "linear-gradient(135deg,#6366f1,#06b6d4)", "icon": "\u27a1\ufe0f", "id": "arrowly", "name": "Arrowly: Arrow Puzzle Game", "package": "com.dreamgateltd.arrowly", "privacyUrl": "https://muse.ai/s/arrowly-privacy-policy-xtv6xzx0j0fxxtb/Hkp8OVDsfw3mcuXwNw4TymnxdM5UNKGBh6pZmLOspBE", "sourceCode": {"forSale": true, "note": "Complete Android project. Signing keys not included \u2014 buyer signs with their own key.", "price": null}, "status": "testing", "statusLabel": "In closed testing", "storeUrl": "https://play.google.com/store/apps/details?id=com.dreamgateltd.arrowly", "tagline": "Tap an arrow with a clear path to the edge."}], "developer": {"email": "yourdreamgate@gmail.com", "name": "DreamGate", "tagline": "Indie apps, built with care."}};
+document.getElementById('hero-tagline').textContent = DATA.developer.tagline;
+document.getElementById('contact-email').textContent = DATA.developer.email;
+document.getElementById('contact-email').href = 'mailto:' + DATA.developer.email;
+
+function badge(app) {
+  var cls = app.status === 'live' ? 'badge-live' : 'badge-testing';
+  return '<span class="badge ' + cls + '">' + app.statusLabel + '</span>';
+}
+
+var grid = document.getElementById('apps-grid');
+grid.innerHTML = DATA.apps.map(function(app) {
+  var feats = app.features.map(function(f) { return '<li>' + f + '</li>'; }).join('');
+  return '<article class="card">' +
+    '<div class="card-icon" style="background:' + app.gradient + '">' + app.icon + '</div>' +
+    '<div>' + badge(app) + '</div>' +
+    '<h3>' + app.name + '</h3>' +
+    '<p><em>' + app.tagline + '</em></p>' +
+    '<p>' + app.description + '</p>' +
+    '<ul class="features">' + feats + '</ul>' +
+    '<div class="card-btns">' +
+      '<a class="btn btn-primary" href="' + app.storeUrl + '" target="_blank" rel="noopener">Get on Google Play</a>' +
+      '<a class="btn btn-light" href="mailto:' + DATA.developer.email + '?subject=Buy source code: ' + encodeURIComponent(app.name) + '">Buy source code</a>' +
+    '</div>' +
+    '<a class="privacy-link" href="' + app.privacyUrl + '" target="_blank" rel="noopener">Privacy policy</a>' +
+  '</article>';
+}).join('');
+
+var slist = document.getElementById('source-list');
+slist.innerHTML = DATA.apps.filter(function(a) { return a.sourceCode.forSale; }).map(function(app) {
+  return '<li><div><div class="s-name">' + app.name + ' — full source code</div>' +
+    '<div class="s-note">' + app.sourceCode.note + '</div></div>' +
+    '<a class="btn btn-dark" style="font-size:14px; padding:10px 18px;" href="mailto:' + DATA.developer.email + '?subject=Buy source code: ' + encodeURIComponent(app.name) + '">Contact to buy</a></li>';
+}).join('');
+</script>
+</body>
+</html>
